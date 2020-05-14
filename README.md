@@ -34,4 +34,14 @@ create a user collection with a unique email field
 - create a unique index for email field on the users collection
 
 # 11:routing
+
 create route for users
+
+# 11:user model
+
+create user model
+
+- for validations download @hapi/joi package
+  -- npm i @hapi/joi
+- build model for users model/user.js
+  -- the model should export a validation function and the Model's class

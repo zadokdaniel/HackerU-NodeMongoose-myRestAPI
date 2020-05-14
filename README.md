@@ -25,3 +25,10 @@ Connect and configure express server and mongoose module
 - connect to a mongodb server using mongoose
 - connect "express.json()" middleware
 - configure node server instance to listen to port 3000
+
+# 11:users
+
+create a user collection with a unique email field
+
+- create a collection named users under your selected db
+- create a unique index for email field on the users collection

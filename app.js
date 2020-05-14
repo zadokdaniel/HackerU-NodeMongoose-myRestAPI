@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 // config mongoose and connect to mongodb server
 const mongoConfig = {
   username: "new-user1",
-  password: "MUmQn34wG3QGF32V",
+  password: "vM9eGla6tRlpO2YN",
   db: "my_rest_api",
 };
 const MONGO_URI = `mongodb+srv://${mongoConfig.username}:${mongoConfig.password}@mynodeproject-q7yks.mongodb.net/${mongoConfig.db}?retryWrites=true&w=majority`;

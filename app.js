@@ -9,7 +9,7 @@ const mongoConfig = {
   password: "vM9eGla6tRlpO2YN",
   db: "my_rest_api",
 };
-const MONGO_URI = `mongodb+srv://${mongoConfig.username}:${mongoConfig.password}@mynodeproject-q7yks.mongodb.net/${mongoConfig.db}?retryWrites=true&w=majority`;
+const MONGO_URI = `mongodb://localhost/rest`;
 
 mongoose
   .connect(MONGO_URI, {

@@ -45,3 +45,12 @@ create user model
   -- npm i @hapi/joi
 - build model for users model/user.js
   -- the model should export a validation function and the Model's class
+
+# 11:save user
+
+write route function for user creation
+
+- perform validation on request's body
+- create user object with mongoose model if valid
+- upload user to db
+- return user's data object from db

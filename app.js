@@ -22,6 +22,10 @@ mongoose
 // config express middleware
 app.use(express.json());
 
+// config routes
+const usersRoute = require("./routes/users");
+app.use("/api/users", usersRoute);
+
 // start server
 const PORT = 3000;
 http.listen(PORT, () => console.log(`connected on port ${PORT}!`));

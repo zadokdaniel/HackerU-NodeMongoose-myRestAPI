@@ -32,3 +32,6 @@ create a user collection with a unique email field
 
 - create a collection named users under your selected db
 - create a unique index for email field on the users collection
+
+# 11:routing
+create route for users

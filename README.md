@@ -116,3 +116,7 @@ write route function for user creation
 
 - create new route at /api/cards
 - create route module for cards at /routes/card.js
+
+# 13: reference user
+ 
+- create a reference user field on cards model

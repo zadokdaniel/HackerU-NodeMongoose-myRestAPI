@@ -70,3 +70,10 @@ write route function for user creation
 - validate user existence
 - validate password
 - return ok
+
+# 12:jwt
+
+- install jsonwebtoken package
+  - npm i jsonwebtoken
+- add generateToken method to user's model
+- on /auth endpoint in case all valid send token

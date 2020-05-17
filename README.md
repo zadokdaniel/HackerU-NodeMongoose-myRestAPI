@@ -125,3 +125,10 @@ write route function for user creation
 
 - create and export a function which will generate a random number that doesn't exist in the db yet
 - create a protected route on /api/auth that will show the generated numbers
+
+# 13: add card
+
+- on POST /api/cards
+  - validate body info
+  - create new document using body info generateBizNumber and req.user.id
+  - send created document back

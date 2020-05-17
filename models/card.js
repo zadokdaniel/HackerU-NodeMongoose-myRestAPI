@@ -58,7 +58,7 @@ function validateCard(card) {
       .max(10)
       .required()
       .regex(/^0[2-9]\d{7,8}$/),
-    bizImage: Joi.string().min(11).max(1024).required(),
+    bizImage: Joi.string().min(11).max(1024),
   });
 
   return schema.validate(card);

@@ -111,3 +111,8 @@ write route function for user creation
 - import mongoose
 - create and export a card model using mongoose schema
 - create and export a validation function using @hapi/joi
+
+# 13: card routes
+
+- create new route at /api/cards
+- create route module for cards at /routes/card.js

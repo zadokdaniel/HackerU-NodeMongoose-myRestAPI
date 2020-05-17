@@ -87,3 +87,8 @@ write route function for user creation
 - you can create a random key by running the following commands in cmd
   - node
   - crypto.randomBytes(16).toString('hex')
+
+# 12: auth middleware
+
+- create new file /middleware/auth.js
+- write a function to validate user by jwt token

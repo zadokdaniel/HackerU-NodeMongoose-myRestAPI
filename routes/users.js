@@ -25,7 +25,6 @@ route.post("/", async (req, res) => {
     _.pick(req.body, ["name", "email", "password", "biz", "cards"])
   );
   const salt = await bcrypt.genSalt(12);
-  console.log(salt);
   user.password = await bcrypt.hash(user.password, salt);
   return res.send(_.pick(await user.save(), ["_id", "name", "email"]));
 });

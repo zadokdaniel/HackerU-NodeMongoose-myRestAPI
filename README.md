@@ -58,3 +58,8 @@ write route function for user creation
 # 11: lodash
 
 - return user information in case all validations were passed
+
+# 12: auth
+
+- create new endpoint /api/auth
+- create auth router

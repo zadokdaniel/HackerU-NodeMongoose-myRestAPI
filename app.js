@@ -24,7 +24,9 @@ app.use(express.json());
 
 // config routes
 const usersRoute = require("./routes/users");
+const authRoute = require("./routes/auth");
 app.use("/api/users", usersRoute);
+app.use("/api/auth", authRoute);
 
 // start server
 const PORT = 3000;

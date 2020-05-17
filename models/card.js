@@ -1,5 +1,6 @@
 const Joi = require("@hapi/joi");
 const mongoose = require("mongoose");
+const _ = require("lodash");
 
 const cardSchema = new mongoose.Schema({
   bizName: {
@@ -51,7 +52,8 @@ function validateCard(card) {
   const schema = Joi.object({
     bizName: Joi.string().min(2).max(255).required(),
     bizDescription: Joi.string().min(2).max(1024).required(),
-    bizAddress: Joi.string()
+    bizAddress: Joi.string().min(2).max(400).required(),
+    bizPhone: Joi.string()
       .min(9)
       .max(10)
       .required()
@@ -62,7 +64,16 @@ function validateCard(card) {
   return schema.validate(card);
 }
 
+async function generateBizNumber(Card) {
+  while (true) {
+    let randomNumber = _.random(1000, 99999999999);
+    let card = await Card.findOne({ bizNumber: randomNumber });
+    if (!card) return String(randomNumber);
+  }
+}
+
 module.exports = {
   Card,
   validate: validateCard,
+  generateBizNumber,
 };

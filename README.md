@@ -118,5 +118,10 @@ write route function for user creation
 - create route module for cards at /routes/card.js
 
 # 13: reference user
- 
+
 - create a reference user field on cards model
+
+# 13: biz random
+
+- create and export a function which will generate a random number that doesn't exist in the db yet
+- create a protected route on /api/auth that will show the generated numbers

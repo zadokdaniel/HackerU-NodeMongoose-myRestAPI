@@ -98,3 +98,8 @@ write route function for user creation
 - add endpoint for GET /api/users/me
 - use auth middleware
 - if user authenticated return logged user's document, don't forget to remove the password field.
+
+# 13: cards
+
+- create a unique index on bizNumber filed at cards collection
+  - db.cards.createIndex( { "bizNumber": 1 }, { unique: true } )

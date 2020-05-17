@@ -137,3 +137,8 @@ write route function for user creation
 
 - create GET /api/cards/:id end-point
   - return card document as id specifies in case the logged user is the user who created the card
+
+# 14: update card
+
+- create PUT /api/cards/:id end-point
+  - allow to update and return the updated document

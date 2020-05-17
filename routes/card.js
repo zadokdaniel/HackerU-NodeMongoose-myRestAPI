@@ -39,4 +39,23 @@ router.post("/", auth, async (req, res) => {
   return res.send(post);
 });
 
+router.put("/:id", auth, async (req, res) => {
+  // validate body
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
+  // try to update
+  let card = await Card.findOneAndUpdate(
+    { _id: req.params.id, user_id: req.user._id },
+    req.body
+  );
+  if (!card) {
+    return res.status(404).send("The card with the given ID was not found.");
+  }
+
+  // return the updated card
+  card = await Card.findOne({ _id: req.params.id, user_id: req.user._id });
+  return res.send(card);
+});
+
 module.exports = router;

@@ -103,3 +103,11 @@ write route function for user creation
 
 - create a unique index on bizNumber filed at cards collection
   - db.cards.createIndex( { "bizNumber": 1 }, { unique: true } )
+
+# 13: card model
+
+- create a /model/card.js
+- import @hapi/Joi
+- import mongoose
+- create and export a card model using mongoose schema
+- create and export a validation function using @hapi/joi

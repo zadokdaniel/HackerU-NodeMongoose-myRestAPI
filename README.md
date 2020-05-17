@@ -147,3 +147,13 @@ write route function for user creation
 
 - create DELETE /api/cards/:id end-point
   - allow to delete card in case user created it
+
+# 14: user cards
+
+- add to user schema "card" field of type array
+- create a validation function for card field
+- create PATCH /api/users/cards end-point
+  - validate body with the validation function for card's field
+  - validate received cards bizNumbers existence 
+  - update user's card field to the received bizNumbers
+  - return the user's document

@@ -2,8 +2,34 @@ const express = require("express");
 const route = express.Router();
 const bcrypt = require("bcrypt");
 const _ = require("lodash");
-const { User, validate } = require("../models/user");
+const { User, validate, validateCards } = require("../models/user");
+const { Card } = require("../models/card");
 const auth = require("../middleware/auth");
+
+const getCards = async (cardsArray) => {
+  const cards = await Card.find({ bizNumber: { $in: cardsArray } });
+  return cards;
+};
+
+route.patch("/cards", auth, async (req, res) => {
+  // validate body
+  const { error } = validateCards(req.body);
+  if (error) {
+    return res.status(400).send(error.details[0].message);
+  }
+
+  // validate cards exists
+  const cards = await getCards(req.body.cards);
+  if (cards.length != req.body.cards.length) {
+    return res.status(400).send("Card numbers don't match");
+  }
+
+  // update user's cards
+  let user = await User.findById(req.user._id);
+  user.cards = req.body.cards;
+  user = await user.save();
+  return res.send(user);
+});
 
 // get logged users info (token must be provided)
 route.get("/me", auth, async (req, res) => {

@@ -4,6 +4,16 @@ const { Card, validate, generateBizNumber } = require("../models/card");
 const auth = require("../middleware/auth");
 const router = express.Router();
 
+router.get("/:id", auth, async (req, res) => {
+  const card = await Card.findOne({
+    _id: req.params.id,
+    user_id: req.user._id,
+  });
+  if (!card)
+    return res.status(404).send("The card with the given ID was not found.");
+  return res.send(card);
+});
+
 router.post("/", auth, async (req, res) => {
   // validate body
   const { error } = validate(req.body);

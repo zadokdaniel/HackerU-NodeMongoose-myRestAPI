@@ -132,3 +132,8 @@ write route function for user creation
   - validate body info
   - create new document using body info generateBizNumber and req.user.id
   - send created document back
+
+# 14: get card
+
+- create GET /api/cards/:id end-point
+  - return card document as id specifies in case the logged user is the user who created the card

@@ -77,3 +77,13 @@ write route function for user creation
   - npm i jsonwebtoken
 - add generateToken method to user's model
 - on /auth endpoint in case all valid send token
+
+# 12: config
+
+- install config package
+  - npm i config
+- create config/default.json
+  - insert "jwtKey": "private key" in the created file
+- you can create a random key by running the following commands in cmd
+  - node
+  - crypto.randomBytes(16).toString('hex')

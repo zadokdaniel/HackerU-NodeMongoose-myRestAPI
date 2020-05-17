@@ -58,4 +58,20 @@ router.put("/:id", auth, async (req, res) => {
   return res.send(card);
 });
 
+router.delete("/:id", auth, async (req, res) => {
+  // try and remove document
+  const card = await Card.findOneAndRemove({
+    _id: req.params.id,
+    user_id: req.user._id,
+  });
+
+  // if not possible send error message
+  if (!card) {
+    return res.status(400).send("The card with the given ID was not found.");
+  }
+
+  // if removed send mongo data
+  return res.send(card);
+});
+
 module.exports = router;

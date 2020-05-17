@@ -142,3 +142,8 @@ write route function for user creation
 
 - create PUT /api/cards/:id end-point
   - allow to update and return the updated document
+
+# 14: remove card
+
+- create DELETE /api/cards/:id end-point
+  - allow to delete card in case user created it

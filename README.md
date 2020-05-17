@@ -157,3 +157,8 @@ write route function for user creation
   - validate received cards bizNumbers existence 
   - update user's card field to the received bizNumbers
   - return the user's document
+
+# 14: get cards
+
+- create GET /api/users/cards?numbers=bizNumber,bizNumber...
+  - retrieve from DB all biz specified in Numbers query

@@ -30,6 +30,10 @@ app.use("/api/users", usersRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/cards", cardRoute);
 
+app.get("/", (req, res) => {
+  res.send("ok");
+});
+
 // start server
 const PORT = 3000;
 http.listen(PORT, () => console.log(`connected on port ${PORT}!`));

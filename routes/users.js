@@ -11,6 +11,17 @@ const getCards = async (cardsArray) => {
   return cards;
 };
 
+route.get("/cards", auth, async (req, res) => {
+  if (!req.query.numbers) {
+    return res.status(400).send("missing numbers data");
+  }
+
+  let data = {};
+  data.cards = req.query.numbers.split(",");
+  const cards = await getCards(data.cards);
+  return res.send(cards);
+});
+
 route.patch("/cards", auth, async (req, res) => {
   // validate body
   const { error } = validateCards(req.body);

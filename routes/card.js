@@ -74,4 +74,9 @@ router.delete("/:id", auth, async (req, res) => {
   return res.send(card);
 });
 
+router.get("/", async (req, res) => {
+  const cards = await Card.find({}, { bizNumber: 1, _id: 0 });
+  return res.send(cards);
+});
+
 module.exports = router;

@@ -63,3 +63,10 @@ write route function for user creation
 
 - create new endpoint /api/auth
 - create auth router
+
+# 12: signin
+
+- validate body
+- validate user existence
+- validate password
+- return ok

@@ -92,3 +92,9 @@ write route function for user creation
 
 - create new file /middleware/auth.js
 - write a function to validate user by jwt token
+
+# 12: user me
+
+- add endpoint for GET /api/users/me
+- use auth middleware
+- if user authenticated return logged user's document, don't forget to remove the password field.

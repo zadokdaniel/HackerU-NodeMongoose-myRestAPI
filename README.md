@@ -54,3 +54,7 @@ write route function for user creation
 - create user object with mongoose model if valid
 - upload user to db
 - return user's data object from db
+
+# 11: lodash
+
+- return user information in case all validations were passed

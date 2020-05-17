@@ -1,5 +1,7 @@
 const express = require("express");
 const route = express.Router();
+const bcrypt = require("bcrypt");
+const _ = require("lodash");
 const { User, validate } = require("../models/user");
 
 route.post("/", async (req, res) => {
@@ -19,7 +21,13 @@ route.post("/", async (req, res) => {
     return res.status(400).send("User already exists!");
   }
 
-  res.send("ok");
+  user = new User(
+    _.pick(req.body, ["name", "email", "password", "biz", "cards"])
+  );
+  const salt = await bcrypt.genSalt(12);
+  console.log(salt);
+  user.password = await bcrypt.hash(user.password, salt);
+  return res.send(_.pick(await user.save(), ["_id", "name", "email"]));
 });
 
 module.exports = route;
